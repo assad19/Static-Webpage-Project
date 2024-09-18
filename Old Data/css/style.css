@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 13px;
+}
+
+ul {
+    font-size: 13px;
+}
+
+.navbar-brand, .nav-link {
+    font-size: 14px;
+}
+
+.btn {
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-details .col-md-6 {
+    flex-basis: 48%;
+    margin-bottom: 20px;
+}
+
+footer {
+    font-size: 12px;
+    padding-top: 10px;
+}

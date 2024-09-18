@@ -1,0 +1,133 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Eli Electronics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#footer">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<footer id="footer" class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Eli Electronics. All Rights Reserved.</p>
+</footer>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options | E-Shop</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+         navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Eli Electronics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#footer">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<footer id="footer" class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Eli Electronics. All Rights Reserved.</p>
+</footer>
+ navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">E-Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#footer">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container my-5">
+        <h1 class="text-center">Payment Options</h1>
+        <form action="confirmation.html" method="POST">
+            <div class="mb-3">
+                <label for="paymentMethod">Payment Method</label>
+                <select class="form-control" id="paymentMethod">
+                    <option>Credit Card</option>
+                    <option>PayPal</option>
+                </select>
+            </div>
+            <div id="creditCardInfo" class="payment-info">
+                <div class="mb-3">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" class="form-control" id="expiryDate" required placeholder="MM/YY">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cardHolder">Card Holder Name</label>
+                    <input type="text" class="form-control" id="cardHolder" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Complete Payment</button>
+        </form>
+    </section>
+
+    <footer id="footer" class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 E-Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="css/bootstrap/jquery.min.js"></script>
+    <script src="css/bootstrap/popper.min.js"></script>
+    <script src="css/bootstrap/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

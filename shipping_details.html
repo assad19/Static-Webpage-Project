@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Details | Eli Electronics</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Eli Electronics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#footer">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <section class="container my-5">
+        <h1 class="text-center">Shipping Details</h1>
+        <form action="payment_options.html" method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" class="form-control" id="postalCode" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="shipping">Shipping Method</label>
+                <select class="form-control" id="shipping">
+                    <option>Free Shipping (5-7 days)</option>
+                    <option>Express Shipping (2-3 days) - $20</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Proceed to Payment</button>
+        </form>
+    </section>
+
+     id="footer" class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Eli Electronics. All Rights Reserved.</p>
+</footer>
+
+
+    <script src="css/bootstrap/jquery.min.js"></script>
+    <script src="css/bootstrap/popper.min.js"></script>
+    <script src="css/bootstrap/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
