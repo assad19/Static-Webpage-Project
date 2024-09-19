@@ -18,7 +18,6 @@
     <script defer src="./public/js/slider.js"></script>
 
     <style>
-        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -206,6 +205,11 @@
                 flex-direction: column;
             }
         }
+
+        .cursor {
+            cursor: pointer;
+        }
+        
     </style>
 
 </head>
@@ -235,16 +239,16 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto align-items-center">
                             <li class="nav-item">
-                                <a class="nav-link mx-2 nav-divider" href="../index.html">Home</a>
+                                <a class="nav-link mx-2 nav-divider" href="./index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-2 nav-divider" href="../about.html">About</a>
+                                <a class="nav-link mx-2 nav-divider" href="#about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-2 nav-divider" href="../shop.html">Shop</a>
+                                <a class="nav-link mx-2 nav-divider" href="./shop.html">Shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-2" href="../help.html">Help</a>
+                                <a class="nav-link mx-2" href="#footer">Help</a>
                             </li>
     
                             <li class="nav-item d-lg-none">
@@ -293,13 +297,13 @@
                 <h2 class="section-title text-center">Tagline describing your e-shop</h2>
                 <div class="divider"></div>
                 <div class="row featured-images">
-                    <div class="col-md-4">
+                    <div class="col-md-4 cursor" onclick="window.location.assign('./products/Google-Pixel-9-Pro.html');">
                         <img src="./images/Google Pixel 9 Pro.webp" alt="Featured Image 1" class="img-fluid">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 cursor" onclick="window.location.assign('./products/ASUS-ProArt-PZ13.html');">
                         <img src="./images/ASUS ProArt PZ13.webp" alt="Featured Image 2" class="img-fluid">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 cursor" onclick="window.location.assign('./products/Beats-Fit-Pro.html');">
                         <img src="./images/Beats Fit Pro.webp" alt="Featured Image 3" class="img-fluid">
                     </div>
                 </div>
@@ -314,28 +318,28 @@
                 <div class="row">
                     <div class="slider-container">
                         <div class="slider">
-                          <div class="slide">
+                          <div class="slide cursor" onclick="window.location.assign('./products/Hauwei-Watch-Fit-3.html');">
                             <img src="./images//Hauwei Watch Fit 3.webp" alt="Product 1">
                             <div class="product-info">
                               <p class="mt-4 sliderProductName">Hauwei Watch Fit 3</p>
                               <p class="sliderProductPrice">$300</p>
                             </div>
                           </div>
-                          <div class="slide">
+                          <div class="slide cursor" onclick="window.location.assign('./products/iPad-Pro-11-inch.html');">
                             <img src="./images/iPad Pro 11 inch.webp" alt="Product 2">
                             <div class="product-info">
                               <p class="mt-4 sliderProductName">iPad Pro 11 inch</p>
                               <p class="sliderProductPrice">$300</p>
                             </div>
                           </div>
-                          <div class="slide">
+                          <div class="slide cursor" onclick="window.location.assign('./products/iPhone-15-Pro-Max-256GB-Titanium.html');">
                             <img src="./images/iPhone 15 Pro Max 256GB Titanium.webp" alt="Product 3">
                             <div class="product-info">
                               <p class="mt-4 sliderProductName">iPhone 15 Pro Max 256GB Titanium</p>
                               <p class="sliderProductPrice">$300</p>
                             </div>
                           </div>
-                          <div class="slide">
+                          <div class="slide cursor" onclick="window.location.assign('./products/Lenovo-ThinkPad-X1-Carbon-Gen-12.html');">
                             <img src="./images/Lenovo ThinkPad X1 Carbon Gen 12.webp" alt="Product 4">
                             <div class="product-info">
                               <p class="mt-4 sliderProductName">Lenovo ThinkPad X1 Carbon Gen 12</p>
@@ -381,7 +385,7 @@
             <div class="container">
                 <div class="custom-row">
                     <!-- Left Large Product -->
-                    <div class="col-lg-6 col-md-12 custom-column large-column">
+                    <div class="col-lg-6 col-md-12 custom-column large-column cursor" onclick="window.location.assign('./products/Samsung-Galaxy-A54.html');">
                         <div class="custom-product-card large-product">
                             <div class="custom-product-image">
                                 <img src="./images/Samsung Galaxy A54.webp" alt="Product Image">
@@ -399,7 +403,7 @@
                     <!-- Right Smaller Products -->
                     <div class="col-lg-6 col-md-12 custom-column">
                         <div class="row g-4">
-                            <div class="col-md-6 col-sm-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12 cursor" onclick="window.location.assign('./products/Hauwei-Watch-Fit-3.html');">
                                 <div class="custom-product-card">
                                     <div class="custom-product-image">
                                         <img src="./images/Hauwei Watch Fit 3.webp" alt="Product Image">
@@ -413,7 +417,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12 cursor" onclick="window.location.assign('./products/iPhone-15-Pro-Max-256GB-Titanium.html');">
                                 <div class="custom-product-card">
                                     <div class="custom-product-image">
                                         <img src="./images/iPhone 15 Pro Max 256GB Titanium.webp" alt="Product Image">
@@ -427,7 +431,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12 cursor" onclick="window.location.assign('./products/ASUS-ProArt-PZ13.html');">
                                 <div class="custom-product-card">
                                     <div class="custom-product-image">
                                         <img src="./images/ASUS ProArt PZ13.webp" alt="Product Image">
@@ -441,7 +445,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12 cursor" onclick="window.location.assign('./products/Beats-Fit-Pro.html');">
                                 <div class="custom-product-card">
                                     <div class="custom-product-image">
                                         <img src="./images/Beats Fit Pro.webp" alt="Product Image">
@@ -461,7 +465,7 @@
             </div>
         </section>
         
-        <section class="about py-5 text-center">
+        <section id="about" class="about py-5 text-center">
             <div class="container">
                 <h2>About Your Shop</h2>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
@@ -471,7 +475,7 @@
     </main>
 
     <footer>
-        <div class="footer-container">
+        <div id="footer" class="footer-container">
             <div class="footer-section">
                 <img src="./images/logo.webp" alt="Company Logo" class="logo">
                 <p class="text-left">1717 Harrison St, San Francisco, CA 94103, USA</p>

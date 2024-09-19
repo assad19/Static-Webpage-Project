@@ -1,91 +1,338 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart | Eli Electronics</title>
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Eli Electronics</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#footer">Help</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./public/css/header.css" rel="stylesheet">
+    <script src="./public/js/quantity.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-    <section class="container my-5">
-        <h1 class="text-center">Shopping Cart</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ASUS PZ13</td>
-                            <td>$1200</td>
-                            <td>1</td>
-                            <td>$1200</td>
-                        </tr>
-                        <tr>
-                            <td>Sony Xperia 5 IV</td>
-                            <td>$699</td>
-                            <td>1</td>
-                            <td>$699</td>
-                        </tr>
-                    </tbody>
-                </table>
+        .progress-bar {
+            height: 2px;
+            background-color: #ccc;
+        }
+
+        .progress-bar .progress {
+            width: 33.33%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .product-image {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+        }
+
+        .quantity-input {
+            width: 60px;
+        }
+
+        .quantity-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100px;
+            float: right;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border: none;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .quantity-btn:hover {
+            background-color: #ddd;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            background-color: white;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        .quantity-input:focus {
+            outline: none;
+        }
+
+        .hero{
+            background-color: #F4F4F4;
+            padding: 70px 0px 50px 0px;
+        }
+
+        header{
+            border: 0px !important;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #343a40;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container d-flex justify-content-between align-items-center">
+                    <!-- Logo on the left -->
+                    <a class="navbar-brand d-flex align-items-center" href="./index.html">
+                        <img src="./images/logo.webp" alt="Logo" width="40" height="40" class="me-2">
+                    </a>
+    
+                    <!-- Search bar in the middle for large screens -->
+                    <form class="d-none d-lg-flex mx-auto" style="width: 40%;">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+    
+                    <!-- Navbar Toggler for mobile view -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <!-- Nav items on the right -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link mx-2 nav-divider" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-2 nav-divider" href="./index.html#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-2 nav-divider" href="./shop.html">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-2" href="#footer">Help</a>
+                            </li>
+    
+                            <li class="nav-item d-lg-none">
+                                <a style="background:#6c6464;border-color:#6c6464"
+                                    class="btn btn-dark text-white d-flex align-items-center" href="cart.html">
+                                    <svg class="me-2" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="9" cy="21" r="1"></circle>
+                                        <circle cx="20" cy="21" r="1"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                    Your Cart
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Cart button for large screens -->
+                    <div class="d-none d-lg-flex">
+                        <a class="btn btn-dark text-white d-flex align-items-center ms-lg-3" href="cart.html">
+                            <svg class="me-2" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Your Cart
+                        </a>
+                    </div>
+                </div>
+            </nav>
+    
+            <!-- Search bar for mobile screens -->
+            <div class="d-lg-none p-2">
+                <form class="d-flex" style="width: 100%;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
             </div>
-            <div class="col-md-4">
+        </div>
+        </header>
+
+
+        <div class="container-fluid hero">
+            <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4 fw-bold"><a style="color: #4e4e4e;text-decoration: none;" href="./cart.html">1. Shopping Cart </a></div>
+                <div class="col-md-4 text-muted"><a style="color: #4e4e4e;text-decoration: none;" href="./shipping.html">2. Shipping Details</a></div>
+                <div class="col-md-4 text-muted"><a style="color: #4e4e4e;text-decoration: none;" href="./checkout.html">3. Payment Options</a></div>
+            </div>
+        </div>
+        </div>
+
+
+    <div class="container mt-5 mb-5">
+        <!-- <div class="row mb-4">
+            <div class="col">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4 fw-bold">1. Shopping Cart</div>
+            <div class="col-md-4 text-muted">2. Shipping Details</div>
+            <div class="col-md-4 text-muted">3. Payment Options</div>
+        </div> -->
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Shopping Cart</h2>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2 mb-3 mb-md-0">
+                                <div class="product-image"></div>
+                            </div>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h5 class="card-title">PRODUCT NAME</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="card-text fw-bold">$300</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <!-- <div class="input-group quantity-input ms-auto">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="1">
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div> -->
+
+
+                                <div class="quantity-wrapper">
+                                    <button class="quantity-btn" onclick="decreaseQuantity()">&#8722;</button>
+                                    <input type="text" id="quantity-input" class="quantity-input" value="1 pcs"
+                                        readonly>
+                                    <button class="quantity-btn" onclick="increaseQuantity()">&#43;</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2 mb-3 mb-md-0">
+                                <div class="product-image"></div>
+                            </div>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h5 class="card-title">PRODUCT NAME</h5>
+                                <p class="card-text">Sed do eiusmod tempor incididunt ut labore et</p>
+                                <p class="card-text fw-bold">$300</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <!-- <div class="input-group quantity-input ms-auto">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="1">
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div> -->
+                                <div class="quantity-wrapper">
+                                    <button class="quantity-btn" onclick="decreaseQuantity2()">&#8722;</button>
+                                    <input type="text" id="quantity-input2" class="quantity-input" value="1 pcs"
+                                        readonly>
+                                    <button class="quantity-btn" onclick="increaseQuantity2()">&#43;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="mb-4">Summary</h2>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Order Summary</h5>
-                        <p>Subtotal: $1899</p>
-                        <p>Shipping: Free</p>
-                        <p>Taxes: $95</p>
-                        <p><strong>Total: $1994</strong></p>
-                        <!-- Correct link to proceed to the shipping details page -->
-                        <a href="shipping_details.html" class="btn btn-dark btn-block">Proceed to Checkout</a>
+                        <div class="mb-3">
+                            <label for="coupon" class="form-label">ENTER COUPON CODE</label>
+                            <input type="text" class="form-control" id="coupon">
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>SUBTOTAL</span>
+                            <span>$600</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>SHIPPING</span>
+                            <span>FREE</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>TAXES</span>
+                            <span>$13</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold">
+                            <span>TOTAL</span>
+                            <span>$613</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <button  onclick="window.location.href='./shipping.html';" class="btn btn-dark me-2"">Next</button>
+                <button onclick="window.location.href='./index.html';" class="btn btn-light">Cancel</button>
+            </div>
+        </div>
+    </div>
 
-    <footer id="footer" class="bg-dark text-white text-center py-4">
-        <p>&copy; 2024 Eli Electronics. All Rights Reserved.</p>
+    <footer id="footer" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-3">
+                    <a href="./index.html" class="me-3">Home</a>
+                    <a href="./about.html" class="me-3">About</a>
+                    <a href="./shop.html" class="me-3">Shop</a>
+                    <a href="./help.html">Help</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; Your Company Name</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="css/bootstrap/jquery.min.js"></script>
-    <script src="css/bootstrap/popper.min.js"></script>
-    <script src="css/bootstrap/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
